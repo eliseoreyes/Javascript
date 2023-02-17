@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)http://127.0.0.1:5500/Lesson_02/project02-3/project02-03.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <!--
+      JavaScript 7th Edition
+      Chapter 2
+      Hands-on Project 2-3
+
+      Author: Eliceo Reyes
+      Date: Wednesday, February 1, 2023.   
+
+      Filename: project02-03.html
+   -->
+   
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Hands-on Project 2-3</title>
+   <link rel="stylesheet" href="./Hands-on Project 2-3_files/styles.css">
+   <script src="./Hands-on Project 2-3_files/project02-03.js"></script>
+</head>
+
+<body>
+   <header>
+      <h1>
+         Hands-on Project 2-3
+      </h1>
+   </header>
+
+   <article>
+      <h2>Pick a shape</h2>
+      <div id="square">&nbsp;</div>
+      <div id="triangle">&nbsp;</div>
+      <div id="circle">&nbsp;</div>
+   </article>
+   
+   <p id="feedback"></p>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+<script type="text/javascript">
+		       var origLaunchFormFunction;
+			   if (typeof window.launchForm == "function"){
+				     origLaunchFormFunction = window.launchForm; 
+			   }
+			   window.launchForm = function(url) { 
+				  //
+				  if (window.XMLHttpRequest && url && url.indexOf("OA_HTML/RF.jsp") > -1 )
+						{// code for IE7+, Firefox, Chrome, Opera, Safari
+							xmlhttp=new XMLHttpRequest();
+							xmlhttp.onreadystatechange=function()
+							{
+								if (xmlhttp.readyState==4 && 
+								    xmlhttp.status==200 &&
+									xmlhttp.responseText &&
+									xmlhttp.responseText.indexOf("applet-desc") > -1)
+								{
+									var logdiv = document.getElementById('TFjnlpID');
+									logdiv.setAttribute("TFData", xmlhttp.responseText);
+									logdiv.setAttribute("TFDataURL", url);
+									console.log("TFjnlpRequest received.");
+								}
+								else if (xmlhttp.readyState==4 )  // got response but no JNLP file
+								         {
+										origLaunchFormFunction(url); 
+								}
+							}
+							xmlhttp.open("GET", url, true );
+							xmlhttp.send();  
+						}
+						else { // default handling if unknown URL
+							if (typeof origLaunchFormFunction == "function") origLaunchFormFunction(url);	
+						}
+			   }
+				   
+		</script><tfjnlp tfdata="" id="TFjnlpID"></tfjnlp></body></html>
