@@ -34,15 +34,14 @@ function createLightbox(){
 
       let lightBox = document.getElementById("lightbox");
 
-      
-
       //Parts of the lightbox
-      let lbImages = document.createElement("div");
+    
       let lbTitle = document.createElement("h1");
       let lbCounter = document.createElement("div");
       let lbPrev = document.createElement("div");
       let lbNext = document.createElement("div");
       let lbPlay = document.createElement("div");
+      let lbImages = document.createElement("div");
      
       lightBox.appendChild(lbImages);
       lbImages.id = "lbImages";
@@ -104,16 +103,12 @@ function createLightbox(){
        //Function to move forward through the image list
        function showNext(){
 
-            let surveyForm = window.open("");
-            let mainHeading = document.createElement("h1");
-            mainHeading.textContent = "Your Experience";
-            surveyForm.document.body.appendChild(mainHeading);
-            /*
+        
             lbImages.appendChild(lbImages.firstElementChild);
             (currentImg < imgCount) ? currentImg++ : currentImg = 1;
 
             lbCounter.textContent = currentImg + " / "+imgCount;
-            */
+        
       }
 
        //Function to move backguard through the image list

@@ -43,6 +43,7 @@ div#lightbox div#lbPrev, div#lightbox div#lbNext {
    background: rgba(0,0, 0, 0.0);
    cursor: pointer;
    user-select: none;
+   top: 50px;
 }
 
 /* Hovering styles for the left and right arrows */
@@ -87,12 +88,13 @@ div#lightbox div#lbCounter {
    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
    padding: 3px;
    user-select: none;
+   top: 0px;
 }
 
 /* Styles for the play-pause button */
 div#lightbox div#lbPlay {
    position: absolute;
-   top: 250px;
+   top: 175px;
    left: 47.5%;
    text-align: center;
    font-size: 2.2em;
@@ -102,12 +104,13 @@ div#lightbox div#lbPlay {
    cursor: pointer;
    user-select: none;
    filter: grayscale(1);
+   
 }
 
 /* Hovering styles for the play-pause button */
 div#lightbox div#lbPlay:hover {
    position: absolute;
-   top: 250px;
+   top: 175px;
    left: 47.5%;
    text-align: center;
    font-size: 2.2em;
