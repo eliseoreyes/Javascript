@@ -17,8 +17,8 @@ let board = document.getElementById("board");
 let allTiles = document.getElementsByClassName("tile");
 
 // Objects that will reference the first and second tile clicked by the player
-let firstFlipped;
-let secondFlipped;
+let firstFlipped //= document.getElementsByClassName("front");
+let secondFlipped //= document.getElementsByClassName("back");
 
 // Variable containing the id of a timed command
 let timeID;
@@ -40,7 +40,7 @@ function scrambleTiles() {
       let randomIndex = Math.floor(allTiles.length*Math.random());
       
       // Randomly insert a tile before the current tile in the loop
-      board.insertBefore(board.firstElementChild, board.lastElementChild);      
+      board.insertBefore(board.firstChild, board.children[randomIndex]);     
      
    }
 }
@@ -54,24 +54,24 @@ function playConcentration() {
       // Run when a tile is clicked
       allTiles[i].onclick = function() {
          // Test to see if the back of the tile is displayed
-         if (this.lastElementChild.className = "back") {
+         if (this.lastElementChild.className = "back") { // Error 1
             
             tilesFlipped++;  // increase the flip count by 1
             
-            if (tilesFlipped = 1) {
+            if (tilesFlipped == 1) { // Error 2
                // if this is the first tile clicked then flip it
-               firstFlipped = this;
+               firstFlipped = this; // Error 3
                firstFlipped.appendChild(firstFlipped.firstElementChild);
-            } else if (tilesFlipped = 2) {
+            } else if (tilesFlipped == 2) { // Error 4
                // if this is the second tile clicked then flip it
                // and then flip both tiles back after 1 second
-               secondFlipped = this;
+               secondFlipped = this; // Error 5
                secondFlipped.appendChild(secondFlipped.firstElementChild);
-               timeID = window.setTimeout(flipBack, 1000);
+               timeID = window.setTimeout(flipBack, 1000); // Error 6
             }
          }
       }
-   }  
+   } 
    
    /* Function to flip the two tiles if they don't match */
    function flipBack() {
@@ -84,7 +84,7 @@ function playConcentration() {
       }
       
       // Reset the tiles flipped counter to zero
-      titlesFlipped = 0;
+      tilesFlipped = 0; // Error 7
    }   
 }
 
