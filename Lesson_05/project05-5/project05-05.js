@@ -34,17 +34,16 @@ window.addEventListener("load", playConcentration)
 
 // Function that scrambles the order of the tiles within the board
 function scrambleTiles() {
-   for (let i = 0; i <= allTiles.length; i++) {
+   for (let i = 0; i < allTiles.length; i++) {
       
       // Random index integer from 0 to the number of tiles minus 1
       let randomIndex = Math.floor(allTiles.length*Math.random());
       
       // Randomly insert a tile before the current tile in the loop
-      board.insertBefore(board.firstChild, board.children[randomIndex]);     
-     
+     // board.insertBefore(board.firstChild, board.children[randomIndex]);     
+      board.insertBefore(board.children[i], board.children[randomIndex]);   
    }
 }
-
 
 // Function that sets up the game play
 function playConcentration() {
@@ -54,7 +53,7 @@ function playConcentration() {
       // Run when a tile is clicked
       allTiles[i].onclick = function() {
          // Test to see if the back of the tile is displayed
-         if (this.lastElementChild.className = "back") { // Error 1
+         if (this.lastElementChild.className == "back") { // Error 1
             
             tilesFlipped++;  // increase the flip count by 1
             
