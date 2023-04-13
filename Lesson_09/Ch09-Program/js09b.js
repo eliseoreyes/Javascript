@@ -7,7 +7,7 @@
       Author: Eliceo Reyes
       Date: April 12, 2023  
       
-      page 3734
+      page#382
 
       Filename: js09b.js 
  */
@@ -41,6 +41,21 @@
             inputBox.value = fieldValue;
             inputBox.disabled = true;
             document.getElementById('contactInfo').appendChild(inputBox);      
+      }
+
+      //Store data to local storage when the user signs up
+      document.getElementById('signupBtn').onclick = function(){
+            //Data fields to be saved to local storage
+             let formFields = document.querySelectorAll('#contactInfo input, input[type=radio], textarea');    
+             
+             //Write each field name and value to local storage
+             for (let fields of formFields){
+                  localStorage.setItem(fields.name, fields.value);
+             }
+
+             console.log(localStorage);
+
+             location.href = 'js09c.html';
       }
 
 
