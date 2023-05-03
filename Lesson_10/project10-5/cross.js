@@ -77,7 +77,7 @@ function init() {
    // Show all errors in the puzzle in red but only for 1 second
    document.getElementById("showErrors").onclick = function() {
       for (let letters of allLetters) {
-         if (letters.textContent !== letters.dataset.letter) {
+         if (letters.textContent.toUpperCase() !== letters.dataset.letter) {
             letters.style.color = "red";
             setTimeout(function() {
                for (let letters of allLetters) {

@@ -56,7 +56,7 @@ function selectLetter(e){
       switchTypeDirection();  
       
    } else if (userKey >= "a" && userKey <= "z") { // Write the character
-      currentLetter.textContent = userKey; 
+      currentLetter.textContent = userKey;
       
       if (typeDirection === "right") {
          formatPuzzle(rightLetter);  // Move right after typing the letter
