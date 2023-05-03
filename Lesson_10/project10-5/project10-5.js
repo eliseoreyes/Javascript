@@ -12,32 +12,31 @@
 
 */
 
-
 // Event handler to for keydown events within the current document
+//document.addEventListener("keypress", selectLetter); // Error 1
+
 document.addEventListener("keypress", selectLetter);
 
 // Function to apply keyboard actions to select a letter or navigate the puzzle
-function selectLetter(e) {
+function selectLetter(e){
    
-   e.preventDefault();
-   
-   console.log(e.target.dataset);/*
+     e.preventDefault(); // Error 2
 
    // Reference the letter to the left of the current letter
-   let leftLetter = document.getElementById(e.target.dataset.data-left);
+   let leftLetter = document.getElementById(currentLetter.dataset.left);
    
    // Reference the letter above the current letter
-   let upLetter = document.getElementById(e.dataset.data-up);
+   let upLetter = document.getElementById(currentLetter.dataset.up);
    
    // Reference the letter to the right of the current letter
-   let rightLetter = document.getElementById(e.dataset.data-right); 
+   let rightLetter = document.getElementById(currentLetter.dataset.right); 
    
    // Reference the letter below the current letter
-   let downLetter = document.getElementById(e.dataset.data-down); 
+   let downLetter = document.getElementById(currentLetter.dataset.down); 
    
    // Get the key typed by the player
-   let userKey = e.code;
- 
+   let userKey = e.key;
+
    if (userKey === "ArrowLeft") { // Move left 
       formatPuzzle(leftLetter);  
       
@@ -65,6 +64,5 @@ function selectLetter(e) {
          formatPuzzle(downLetter);  // Move down after typing the letter
       }
    }
-*/
 }
 
