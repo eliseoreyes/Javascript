@@ -83,7 +83,7 @@ function init() {
                for (let letters of allLetters) {
                   letters.style.color = "";
                }
-            }, 1000);
+            }, 10000);
          }
       }
    }
